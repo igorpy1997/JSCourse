@@ -44,4 +44,30 @@ First topic covering JavaScript variables and data types fundamentals.
 - Break down a five-digit number by digits and display it in the output with spaces between digits
 - Example: 10369 → 1 0 3 6 9
 
+### 2. Operators and Control Flow
+
+Second topic covering JavaScript operators, conditional statements, and basic flow control.
+
+#### promptWork
+- Use prompt to ask for the "user's name"
+- Use alert to display "Hello, John! How are you?", where "John" is the name entered by the user
+
+#### numberCheck
+- Given a three-digit number provided by the user, determine:
+    - Are all digits the same?
+    - Are there any identical digits?
+
+#### userProfile
+- Create a script that:
+    - Asks the user for their birth year
+    - Asks them which city they live in
+    - Asks for their favorite sport
+    - When clicking OK, display a window showing:
+        - Their age
+        - If the user enters Kyiv, Washington, or London, show the message "You live in the capital of..." with the appropriate country
+        - Otherwise, show "You live in [city]" where [city] is the entered city
+
+#### switchCaseUsage
+- Rewrite given code using the switch...case construct
+
 As the course progresses, more topics and labs will be added to this repository.
