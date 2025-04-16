@@ -70,4 +70,20 @@ Second topic covering JavaScript operators, conditional statements, and basic fl
 #### switchCaseUsage
 - Rewrite given code using the switch...case construct
 
+### 3. Loops and Iterations
+
+Third topic covering JavaScript loops, iterations, and number processing.
+
+#### numberOutput
+- Display numbers from 20 to 30 with a step of 0.5 (20, 20.5, 21, 21.5, ...)
+
+#### currencyCalculation
+- One dollar costs 26 hryvnias. Display data with the calculated value of 10, 20, 30... 100 dollars
+
+#### findNumbers
+- Given a whole number N (entered via prompt), display all whole numbers from 1 to 100 whose square does not exceed N
+
+#### isPrimeNumber
+- Given a whole number (entered via prompt), determine if it is prime (a prime number is greater than 1 and has no divisors other than 1 and itself)
+
 As the course progresses, more topics and labs will be added to this repository.
