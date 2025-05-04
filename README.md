@@ -6,6 +6,9 @@ This repository contains practical assignments for the JavaScript course. The co
 
 ## How to Clone the Repository
 
+<details>
+<summary><b>Развернуть инструкции по клонированию репозитория</b></summary>
+
 ### Clone the Entire Repository
 
 ```bash
@@ -26,10 +29,12 @@ git sparse-checkout set variablesAndType/typesList
 # Update from remote repository
 git pull origin main
 ```
+</details>
 
 ## Lab Assignments
 
-### 1. Variables and Data Types
+<details>
+<summary><b>1. Variables and Data Types</b></summary>
 
 First topic covering JavaScript variables and data types fundamentals.
 
@@ -43,8 +48,10 @@ First topic covering JavaScript variables and data types fundamentals.
 #### fiveDigitParser
 - Break down a five-digit number by digits and display it in the output with spaces between digits
 - Example: 10369 → 1 0 3 6 9
+</details>
 
-### 2. Operators and Control Flow
+<details>
+<summary><b>2. Operators and Control Flow</b></summary>
 
 Second topic covering JavaScript operators, conditional statements, and basic flow control.
 
@@ -69,8 +76,10 @@ Second topic covering JavaScript operators, conditional statements, and basic fl
 
 #### switchCaseUsage
 - Rewrite given code using the switch...case construct
+</details>
 
-### 3. Loops and Iterations
+<details>
+<summary><b>3. Loops and Iterations</b></summary>
 
 Third topic covering JavaScript loops, iterations, and number processing.
 
@@ -85,5 +94,91 @@ Third topic covering JavaScript loops, iterations, and number processing.
 
 #### isPrimeNumber
 - Given a whole number (entered via prompt), determine if it is prime (a prime number is greater than 1 and has no divisors other than 1 and itself)
+</details>
+
+<details>
+<summary><b>4. Introduction to Functions</b></summary>
+
+Fourth topic covering the basics of JavaScript functions, function parameters, and return values.
+
+#### symbolRemover
+- Create a function that removes a specified number of characters from a string
+- The function should take two parameters: the original string and the number of characters to remove
+- Return the modified string with the specified number of characters removed
+
+#### averageCalculator
+- Create a function that calculates the arithmetic mean
+- The function should accept multiple numerical arguments
+- Return the average value of all provided numbers
+
+#### arrayElementRemoval
+- Create a function that removes a specific element from an array
+- The function should take two parameters: the array and the element to be removed
+- Return a new array without the specified element
+</details>
+
+<details>
+<summary><b>7. Closures, Callbacks, Higher-Order Functions, and IIFE</b></summary>
+
+Seventh topic covering advanced JavaScript functions concepts including closures, currying, callbacks, higher-order functions, and Immediately Invoked Function Expressions (IIFE).
+
+#### closure
+- Create a closure function that preserves state between calls
+- Demonstrate proper scoping and variable access within closures
+- Show practical examples of using closures in JavaScript
+
+#### currying
+- Implement function currying (transforming a function with multiple arguments into a sequence of functions with single arguments)
+- Demonstrate the practical application of currying for creating reusable function components
+- Show how currying can improve code organization and readability
+
+#### functionWithLoop
+- Create a higher-order function that works with loops
+- Implement an example of using a higher-order function to process an array of data
+- Demonstrate how higher-order functions can be used to abstract iteration patterns
+</details>
+
+<details>
+<summary><b>8. Arrow Functions</b></summary>
+
+Eighth topic covering arrow functions in JavaScript, including their syntax, scope behavior, and practical applications.
+
+#### stairs
+- Create a "stairs" pattern using arrow functions
+- Implement a function that generates a stair pattern of a specified height
+- Demonstrate the use of arrow functions for concise code implementation
+</details>
+
+<details>
+<summary><b>9. Recursion and Introduction to Constructor Functions</b></summary>
+
+Ninth topic covering recursion concepts and an introduction to constructor functions in JavaScript.
+
+#### salarySummation
+- Create a recursive function to calculate the total salary from a nested structure
+- Implement the solution using proper recursion techniques
+- Demonstrate how recursion can elegantly solve problems with nested data structures
+</details>
+
+<details>
+<summary><b>10. Arrays and Objects</b></summary>
+
+Tenth topic covering arrays and objects in JavaScript, their properties, methods, and the Document Object Model (DOM).
+
+#### userCard
+- Create a user card interface using JavaScript objects
+- Implement functionality to display and manipulate user information
+- Practice working with object properties and methods
+
+#### evenNumbersExtraction
+- Create a function that extracts even numbers from an array
+- Implement array filtering using methods like filter() or forEach()
+- Return a new array containing only the even numbers
+
+#### contactBook
+- Create a contact book application using objects and arrays
+- Implement functionality to add, remove, and search contacts
+- Practice manipulating the DOM to display and update the contact list
+</details>
 
 As the course progresses, more topics and labs will be added to this repository.
