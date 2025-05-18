@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Buttons Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Redirect System</h1>
+    <div class="buttons">
+        <button id="enterLinkBtn" class="btn">Enter Link</button>
+        <button id="redirectBtn" class="btn btn-secondary" disabled>Go to Link</button>
+    </div>
+    <div id="linkInput" class="input-field">
+        <input type="url" id="urlInput" placeholder="Enter URL (https://example.com)">
+        <button id="saveBtn" class="btn btn-save">Save</button>
+    </div>
+    <p id="status"></p>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
