@@ -1,0 +1,91 @@
+/* Современный минималистичный стиль */
+.table-modern {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-modern thead {
+    background-color: #3498db;
+    color: white;
+}
+
+.table-modern th,
+.table-modern td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table-modern tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-modern tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table-modern tbody tr:last-of-type {
+    border-bottom: 2px solid #3498db;
+}
+
+.table-modern tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Темный стиль */
+.table-dark {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #222;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.table-dark thead {
+    background-color: #444;
+}
+
+.table-dark th,
+.table-dark td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+.table-dark tbody tr:hover {
+    background-color: #333;
+}
+
+/* Градиентный стиль */
+.table-gradient {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-gradient thead {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+}
+
+.table-gradient th {
+    padding: 15px;
+    text-align: left;
+}
+
+.table-gradient td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table-gradient tbody tr:hover {
+    background-color: rgba(37, 117, 252, 0.05);
+}
