@@ -203,30 +203,4 @@ Place any images named 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, 6.jpg, 7.jpg, 8.jpg, 9
 Display a randomly selected image using Math.random()
 
 </details>
-<details>
-<summary><b>13. Forms and Regular Expressions</b></summary>
-Thirteenth topic covering HTML forms handling and regular expressions for data validation in JavaScript.
-
-**regexValidation**
-- Create a form with multiple input fields (email, phone, name, etc.)
-- Implement client-side validation using regular expressions
-- Validate data format and display appropriate error messages
-- Practice working with form events and preventing form submission on invalid data
-
-</details>
-
-<details>
-<summary><b>14. Coding Practice</b></summary>
-Fourteenth topic focused on practical coding exercises and real-world implementation patterns.
-
-**slider**
-- Create an interactive image/content slider component
-- Implement two different approaches:
-    1. **Display Toggle Approach**: Using `display: none/flex` to show/hide slides with instant transitions
-    2. **Transform Approach**: Using `translateX()` with smooth CSS transitions and infinite loop effect through slide cloning
-- Add navigation controls (previous/next arrows)
-- Practice DOM manipulation, event handling, and CSS animations
-- Demonstrate different implementation strategies for the same functionality
-
-</details>
 As the course progresses, more topics and labs will be added to this repository.
