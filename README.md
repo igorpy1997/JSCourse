@@ -203,4 +203,17 @@ Place any images named 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, 6.jpg, 7.jpg, 8.jpg, 9
 Display a randomly selected image using Math.random()
 
 </details>
+<details>
+<summary><b>15. Web Storages</b></summary>
+Fifteenth topic covering client-side data storage mechanisms including localStorage, sessionStorage, and their practical applications.
+toDoList
+
+Create a fully functional to-do list application
+Implement task creation, editing, deletion, and completion status toggling
+Use localStorage to persist tasks between browser sessions
+Add features like task filtering (all, active, completed) and bulk operations
+Practice data serialization/deserialization and storage event handling
+Demonstrate persistent state management in web applications
+
+</details>
 As the course progresses, more topics and labs will be added to this repository.
