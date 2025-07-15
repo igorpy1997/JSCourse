@@ -216,4 +216,39 @@ Practice data serialization/deserialization and storage event handling
 Demonstrate persistent state management in web applications
 
 </details>
+<details>
+<summary><b>16. Object-Oriented JavaScript</b></summary>
+Sixteenth topic covering object-oriented programming concepts in JavaScript, including constructor functions, prototypes, and class-based inheritance.
+studentConstructor
+Create a constructor function for a "Student" entity with the following requirements:
+Properties:
+
+First name (ім'я)
+Last name (прізвище)
+Birth year (рік народження)
+Grades array (масив з оцінками)
+Attendance array (масив відвідуваності) - exactly 25 elements, initially empty
+
+Methods:
+
+getAge() - returns the student's current age
+getAverageGrade() - calculates and returns the average grade
+present() - marks attendance as true for the next available slot (max 25 records)
+absent() - marks attendance as false for the next available slot (max 25 records)
+summary() - evaluates student performance:
+
+If average grade > 90 AND attendance rate > 0.9 (90%): return "Молодець!"
+If only one condition is met: return "Добре, але можна краще"
+If both conditions fail: return "Редиска!"
+
+
+
+Implementation requirements:
+
+Protect against overflow in the attendance array (maximum 25 records)
+Calculate attendance rate as: number of classes attended / total classes
+Create 2-3 student instances to demonstrate all methods
+Show practical usage examples of the constructor and all methods
+
+</details>
 As the course progresses, more topics and labs will be added to this repository.
