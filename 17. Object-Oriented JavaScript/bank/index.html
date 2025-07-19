@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankAccount Class Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Bank Account System</h1>
+
+    <div class="accounts-grid">
+        <div class="account-card" id="account1">
+            <div class="account-header">
+                <h2>💳 Рахунок #1</h2>
+                <div class="account-type">Основний рахунок</div>
+            </div>
+            <div class="balance-display">
+                <span class="balance-label">Баланс:</span>
+                <span class="balance-amount">₴1000</span>
+            </div>
+            <div class="account-actions">
+                <div class="input-group">
+                    <input type="number" id="amount1" placeholder="Сума" min="0" step="0.01">
+                </div>
+                <div class="action-buttons">
+                    <button class="btn deposit-btn" onclick="performOperation('account1', 'deposit')">
+                        💰 Поповнити
+                    </button>
+                    <button class="btn withdraw-btn" onclick="performOperation('account1', 'withdraw')">
+                        💸 Зняти
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="account-card" id="account2">
+            <div class="account-header">
+                <h2>💳 Рахунок #2</h2>
+                <div class="account-type">Накопичувальний</div>
+            </div>
+            <div class="balance-display">
+                <span class="balance-label">Баланс:</span>
+                <span class="balance-amount">₴500</span>
+            </div>
+            <div class="account-actions">
+                <div class="input-group">
+                    <input type="number" id="amount2" placeholder="Сума" min="0" step="0.01">
+                </div>
+                <div class="action-buttons">
+                    <button class="btn deposit-btn" onclick="performOperation('account2', 'deposit')">
+                        💰 Поповнити
+                    </button>
+                    <button class="btn withdraw-btn" onclick="performOperation('account2', 'withdraw')">
+                        💸 Зняти
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="create-account-section">
+        <h3>Створити новий рахунок</h3>
+        <div class="form-group">
+            <label for="initialBalance">Початковий баланс:</label>
+            <input type="number" id="initialBalance" placeholder="0" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="accountType">Тип рахунку:</label>
+            <select id="accountType">
+                <option value="Основний">Основний рахунок</option>
+                <option value="Накопичувальний">Накопичувальний</option>
+                <option value="Кредитний">Кредитний</option>
+                <option value="Депозитний">Депозитний</option>
+            </select>
+        </div>
+        <button class="btn create-btn" onclick="createNewAccount()">Створити рахунок</button>
+    </div>
+
+    <div class="console-output">
+        <h3>Консоль:</h3>
+        <div id="console" class="console-content"></div>
+        <button class="btn clear-btn" onclick="clearConsole()">Очистити консоль</button>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

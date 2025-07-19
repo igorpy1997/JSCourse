@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Class Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Coach Management System</h1>
+
+    <div class="coaches-grid">
+        <div class="coach-card" id="coach1">
+            <div class="coach-avatar">
+                <span class="avatar-icon">👨‍💪</span>
+            </div>
+            <h2 class="coach-name">John Doe</h2>
+            <div class="coach-info">
+                <p><strong>Спеціалізація:</strong> <span class="specialization">Fitness</span></p>
+                <div class="rating">
+                    <span class="rating-label">Рейтинг:</span>
+                    <div class="stars">
+                        <span class="rating-value">4.7</span>
+                        <div class="star-display"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn info-btn" onclick="showCoachInfo('coach1')">Показати інформацію</button>
+        </div>
+
+        <div class="coach-card" id="coach2">
+            <div class="coach-avatar">
+                <span class="avatar-icon">👩‍🧘</span>
+            </div>
+            <h2 class="coach-name">Alice Smith</h2>
+            <div class="coach-info">
+                <p><strong>Спеціалізація:</strong> <span class="specialization">Yoga</span></p>
+                <div class="rating">
+                    <span class="rating-label">Рейтинг:</span>
+                    <div class="stars">
+                        <span class="rating-value">4.9</span>
+                        <div class="star-display"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn info-btn" onclick="showCoachInfo('coach2')">Показати інформацію</button>
+        </div>
+    </div>
+
+    <div class="add-coach-section">
+        <h3>Додати нового тренера</h3>
+        <div class="form-group">
+            <label for="coachName">Ім'я тренера:</label>
+            <input type="text" id="coachName" placeholder="Введіть ім'я тренера">
+        </div>
+        <div class="form-group">
+            <label for="coachSpecialization">Спеціалізація:</label>
+            <select id="coachSpecialization">
+                <option value="Fitness">Fitness</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Boxing">Boxing</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Crossfit">Crossfit</option>
+                <option value="Pilates">Pilates</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="coachRating">Рейтинг (1-5):</label>
+            <input type="number" id="coachRating" min="1" max="5" step="0.1" placeholder="4.5">
+        </div>
+        <button class="btn add-btn" onclick="addNewCoach()">Додати тренера</button>
+    </div>
+
+    <div class="console-output">
+        <h3>Консоль:</h3>
+        <div id="console" class="console-content"></div>
+        <button class="btn clear-btn" onclick="clearConsole()">Очистити консоль</button>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
