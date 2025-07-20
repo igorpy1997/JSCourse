@@ -272,3 +272,33 @@ Eighteenth topic covering asynchronous JavaScript concepts including Event Loop,
 - Display time in MM:SS format (01:25)
 - Stop timer when countdown reaches zero
 - Practice with setInterval, clearInterval, and time formatting
+</details>
+
+<details>
+<summary><b>19. Ajax and async/await</b></summary>
+
+Nineteenth topic covering advanced asynchronous JavaScript including Ajax requests, async/await syntax, Promise handling, fetch API, HTTP methods, and RESTful architecture principles.
+
+### weatherWidget
+- Create a weather widget using OpenWeatherMap API
+- Implement fetch requests with proper error handling
+- Display current weather data with temperature, humidity, pressure
+- Practice with async/await and API response processing
+- Add button to update weather data and handle loading states
+</details>
+
+<details>
+<summary><b>20. Libraries and npm</b></summary>
+
+Twentieth topic covering external libraries usage, npm package manager, jQuery fundamentals, Bootstrap components, and integration of third-party tools in JavaScript projects.
+
+### todoListJquery
+- Rebuild existing ToDo list application using jQuery library
+- Replace vanilla JavaScript DOM manipulation with jQuery methods
+- Practice with jQuery selectors, events, and animations
+
+### todoListModal
+- Enhance ToDo list with Bootstrap modal windows
+- Create modal popup that displays task details when clicked
+- Integrate Bootstrap CSS framework with existing functionality
+- Practice with Bootstrap components and jQuery event handling
