@@ -66,9 +66,9 @@ Create a script that:
 - Asks them which city they live in
 - Asks for their favorite sport
 - When clicking OK, display a window showing:
-    - Their age
-    - If the user enters Kyiv, Washington, or London, show the message "You live in the capital of..." with the appropriate country
-    - Otherwise, show "You live in [city]" where [city] is the entered city
+  - Their age
+  - If the user enters Kyiv, Washington, or London, show the message "You live in the capital of..." with the appropriate country
+  - Otherwise, show "You live in [city]" where [city] is the entered city
 
 ### switchCaseUsage
 - Rewrite given code using the switch...case construct
@@ -232,9 +232,9 @@ Create a constructor function for a "Student" entity with the following requirem
 - `present()` - marks attendance as true for the next available slot (max 25 records)
 - `absent()` - marks attendance as false for the next available slot (max 25 records)
 - `summary()` - evaluates student performance:
-    - If average grade > 90 AND attendance rate > 0.9 (90%): return "Молодець!"
-    - If only one condition is met: return "Добре, але можна краще"
-    - If both conditions fail: return "Редиска!"
+  - If average grade > 90 AND attendance rate > 0.9 (90%): return "Молодець!"
+  - If only one condition is met: return "Добре, але можна краще"
+  - If both conditions fail: return "Редиска!"
 
 **Implementation requirements:**
 - Protect against overflow in the attendance array (maximum 25 records)
@@ -260,3 +260,15 @@ Seventeenth topic covering ES6 classes in JavaScript, their syntax, differences 
 - Create a BankAccount class with balance property
 - Implement methods: deposit(), withdraw(), getBalance()
 - Handle basic account operations and balance management
+</details>
+
+<details>
+<summary><b>18. Introduction to Asynchrony, Event Loop and Promises</b></summary>
+
+Eighteenth topic covering asynchronous JavaScript concepts including Event Loop, Promises, private class properties, and asynchronous operations management.
+
+### countdownTimer
+- Create a countdown timer with variable start time
+- Display time in MM:SS format (01:25)
+- Stop timer when countdown reaches zero
+- Practice with setInterval, clearInterval, and time formatting
