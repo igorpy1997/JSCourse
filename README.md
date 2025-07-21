@@ -302,3 +302,16 @@ Twentieth topic covering external libraries usage, npm package manager, jQuery f
 - Create modal popup that displays task details when clicked
 - Integrate Bootstrap CSS framework with existing functionality
 - Practice with Bootstrap components and jQuery event handling
+</details>
+
+<details>
+<summary><b>21. EcmaScript and Babel</b></summary>
+
+Twenty-first topic covering modern JavaScript features, EcmaScript standards, Babel transpiler setup, advanced object methods, optional chaining, and browser compatibility solutions.
+
+### babelOptimization
+- Optimize previous homework assignment using Babel transpiler
+- Set up Babel configuration with npm for browser compatibility
+- Use modern ES6+ features (destructuring, arrow functions, async/await)
+- Configure Babel presets and plugins for legacy browser support
+- Practice with modern JavaScript syntax while maintaining compatibility
