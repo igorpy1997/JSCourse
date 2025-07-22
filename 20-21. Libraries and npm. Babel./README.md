@@ -32,7 +32,7 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-.env live-server
 {
   "presets": [
     [
-      "@babel/preset-.env",
+      "@babel/preset-.env.example.example",
       {
         "targets": {
           "browsers": ["> 1%", "last 2 versions", "ie >= 11"]

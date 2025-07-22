@@ -78,7 +78,8 @@ module.exports = (env, argv) => {
             }),
 
             new webpack.DefinePlugin({
-                'process.env.WEATHER_API_KEY': JSON.stringify(process.env.WEATHER_API_KEY || ''),
+                'process.env.API_URL': JSON.stringify(process.env.API_URL || 'http://localhost:3000/api'),
+                'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
             }),
 
             new HtmlWebpackPlugin({
@@ -110,9 +111,9 @@ module.exports = (env, argv) => {
                 new TerserPlugin({
                     terserOptions: {
                         compress: {
-                            drop_console: true,
+                            drop_console: isProduction,
                             drop_debugger: true,
-                            pure_funcs: ['console.log'],
+                            pure_funcs: isProduction ? ['console.log'] : [],
                             passes: 2,
                             unsafe: true,
                             unsafe_comps: true,
@@ -183,10 +184,18 @@ module.exports = (env, argv) => {
                 directory: path.join(__dirname, 'dist'),
             },
             compress: true,
-            port: 3000,
+            port: 8081,
             open: true,
             hot: true,
             historyApiFallback: true,
+            // Proxy API requests to backend during development
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:3000',
+                    changeOrigin: true,
+                    secure: false
+                }
+            }
         },
 
         devtool: isProduction ? false : 'eval-source-map',

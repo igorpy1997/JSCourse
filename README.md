@@ -331,3 +331,18 @@ Twenty-second topic covering build tools like Webpack and Gulp, npm package mana
   - Development server setup
   - Image optimization with image-minimizer-webpack-plugin
 - Practice with webpack.config.js and build automation
+</details>
+
+<details>
+<summary><b>23. Node.js Overview</b></summary>
+
+Twenty-third topic covering Node.js fundamentals, backend development with Express, REST API implementation, and database integration.
+
+### todoApiServer
+- Create TODO list API using Node.js and Express
+- Implement CRUD operations (Create, Read, Update, Delete)
+- Set up CORS configuration for cross-origin requests
+- Integrate MongoDB database for data persistence
+- Create separate frontend folder to interact with API
+- Practice with RESTful endpoints and HTTP methods
+</details>

@@ -11,8 +11,8 @@ npm install
 
 ### 2. Setup API key:
 ```bash
-# Create .env file with your OpenWeatherMap API key
-echo "WEATHER_API_KEY=your_key_here" > .env
+# Create .env.example.example file with your OpenWeatherMap API key
+echo "WEATHER_API_KEY=your_key_here" > .env.example.example
 ```
 
 ### 3. Start development:
@@ -77,8 +77,8 @@ rm -rf dist/ && npm run build
 ### .env file issues:
 ```bash
 # Make sure file exists
-ls -la .env
-echo "WEATHER_API_KEY=test" > .env
+ls -la .env.example.example
+echo "WEATHER_API_KEY=test" > .env.example.example
 ```
 
 ### Dependencies problems:
