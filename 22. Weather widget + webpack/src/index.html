@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget - Webpack Build</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="weather-widget" id="weatherWidget">
+        <div class="widget-header">
+            <div class="date-time">
+                <div class="date" id="currentDate">Loading...</div>
+                <div class="time" id="currentTime">--:--</div>
+                <div class="city-name" id="cityName">---, --</div>
+            </div>
+            <div class="weather-icon" id="weatherIcon">
+                🌤️
+            </div>
+        </div>
+
+        <div class="temperature-section">
+            <div class="main-temp" id="mainTemp">--°C</div>
+            <div class="feels-like" id="feelsLike">Feels Like: --°C</div>
+            <div class="description" id="weatherDescription">Loading weather data...</div>
+        </div>
+
+        <div class="weather-details">
+            <div class="detail-row">
+                <div class="detail-item">
+                    <span class="label">☀️ SUN</span>
+                    <span class="value" id="sunrise">--:--</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">🌙 Humidity:</span>
+                    <span class="value" id="humidity">--%</span>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-item">
+                    <span class="label">🌡️ Pressure:</span>
+                    <span class="value" id="pressure">---- hPa</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">💨 Wind:</span>
+                    <span class="value" id="wind">-- km/h --</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-footer">
+            <div class="last-updated" id="lastUpdated">Never updated</div>
+            <button class="refresh-btn" id="refreshBtn">
+                <span class="refresh-icon">🔄</span>
+            </button>
+        </div>
+
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading weather data...</div>
+        </div>
+    </div>
+
+    <div class="city-input">
+        <input type="text" id="cityInput" placeholder="Enter city name" value="Kyiv">
+        <button id="searchBtn">Get Weather</button>
+    </div>
+
+    <div class="error-message" id="errorMessage"></div>
+</div>
+</body>
+</html>

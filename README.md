@@ -315,3 +315,19 @@ Twenty-first topic covering modern JavaScript features, EcmaScript standards, Ba
 - Use modern ES6+ features (destructuring, arrow functions, async/await)
 - Configure Babel presets and plugins for legacy browser support
 - Practice with modern JavaScript syntax while maintaining compatibility
+</details>
+
+<details>
+<summary><b>22. Code Optimization with Modern Tools</b></summary>
+
+Twenty-second topic covering build tools like Webpack and Gulp, npm package management, project configuration, loaders, plugins, and development vs production optimization.
+
+### webpackBuild
+- Create Webpack build configuration for previous project
+- Implement JavaScript optimization, concatenation, and minification
+- Set up SCSS to CSS compilation with minification
+- Configure file watcher for automatic rebuilds
+- Optional features:
+  - Development server setup
+  - Image optimization with image-minimizer-webpack-plugin
+- Practice with webpack.config.js and build automation

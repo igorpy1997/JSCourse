@@ -24,7 +24,7 @@ npm init -y
 
 2. **Install Babel dependencies:**
 ```bash
-npm install --save-dev @babel/core @babel/cli @babel/preset-env live-server
+npm install --save-dev @babel/core @babel/cli @babel/preset-.env live-server
 ```
 
 3. **Create .babelrc configuration:**
@@ -32,7 +32,7 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env live-server
 {
   "presets": [
     [
-      "@babel/preset-env",
+      "@babel/preset-.env",
       {
         "targets": {
           "browsers": ["> 1%", "last 2 versions", "ie >= 11"]
