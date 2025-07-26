@@ -358,3 +358,18 @@ Twenty-fourth topic covering React fundamentals, Virtual DOM concepts, JSX synta
 - Use Bootstrap library integration
 - Add custom CSS files for additional styling if needed
 </details>
+
+<details>
+<summary><b>25. Class Components, States, Props and Component Lifecycle</b></summary>
+
+Twenty-fifth topic covering React class components, state management with setState, props handling, and component lifecycle methods.
+
+### emojiVoting
+- Create emoji voting application using class components
+- Display list of emojis with click counters for each
+- Add "Show Results" button that displays winning emoji based on vote count
+- Store voting data in localStorage for persistence
+- Include "Clear Results" button to reset all votes
+- Practice with component lifecycle methods (componentDidMount, componentWillUnmount)
+- Implement state management using setState method
+</details>
