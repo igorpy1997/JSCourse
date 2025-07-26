@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const SWAPIApp = () => {
   const [activeTab, setActiveTab] = useState('characters');
 
-  // Моковые данные для демонстрации интерфейса
   const mockCharacters = [
     { id: 1, name: 'Luke Skywalker', height: '172', mass: '77', birth_year: '19BBY', gender: 'male' },
     { id: 2, name: 'Darth Vader', height: '202', mass: '136', birth_year: '41.9BBY', gender: 'male' },
