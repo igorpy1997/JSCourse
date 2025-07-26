@@ -346,3 +346,15 @@ Twenty-third topic covering Node.js fundamentals, backend development with Expre
 - Create separate frontend folder to interact with API
 - Practice with RESTful endpoints and HTTP methods
 </details>
+
+<details>
+<summary><b>24. Introduction to React and Virtual DOM</b></summary>
+
+Twenty-fourth topic covering React fundamentals, Virtual DOM concepts, JSX syntax, and component-based architecture.
+
+### firstReactApp
+- Generate your first React application using Create React App or Vite
+- Create interface for SWAPI (Star Wars API) - UI only, no request logic or events
+- Use Bootstrap library integration
+- Add custom CSS files for additional styling if needed
+</details>
