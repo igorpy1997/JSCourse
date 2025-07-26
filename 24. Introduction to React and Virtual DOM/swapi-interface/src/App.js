@@ -1,9 +1,19 @@
+// src/App.jsx
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header.jsx';
+import SearchSection from './components/SearchSection.jsx';
+import TabNavigation from './components/TabNavigation.jsx';
+import CharacterCard from './components/CharacterCard.jsx';
+import PlanetCard from './components/PlanetCard.jsx';
+import StarshipCard from './components/StarshipCard.jsx';
+import FilmCard from './components/FilmCard.jsx';
+import StatisticsSection from './components/StatisticsSection.jsx';
+import Footer from './components/Footer.jsx';
 
-const SWAPIApp = () => {
+const App = () => {
   const [activeTab, setActiveTab] = useState('characters');
 
+  // Моковые данные
   const mockCharacters = [
     { id: 1, name: 'Luke Skywalker', height: '172', mass: '77', birth_year: '19BBY', gender: 'male' },
     { id: 2, name: 'Darth Vader', height: '202', mass: '136', birth_year: '41.9BBY', gender: 'male' },
@@ -32,141 +42,15 @@ const SWAPIApp = () => {
     { id: 4, title: 'The Phantom Menace', episode_id: 1, director: 'George Lucas', producer: 'Rick McCallum', release_date: '1999-05-19' },
   ];
 
-  const CharacterCard = ({ character }) => (
-      <div className="col-md-6 col-lg-4 mb-4">
-        <div className="card h-100 shadow-sm">
-          <div className="card-body">
-            <h5 className="card-title text-warning">{character.name}</h5>
-            <p className="card-text">
-              <strong>Height:</strong> {character.height} cm<br/>
-              <strong>Mass:</strong> {character.mass} kg<br/>
-              <strong>Birth Year:</strong> {character.birth_year}<br/>
-              <strong>Gender:</strong> {character.gender}
-            </p>
-            <button className="btn btn-primary btn-sm">View Details</button>
-          </div>
-        </div>
-      </div>
-  );
-
-  const PlanetCard = ({ planet }) => (
-      <div className="col-md-6 col-lg-4 mb-4">
-        <div className="card h-100 shadow-sm">
-          <div className="card-body">
-            <h5 className="card-title text-info">{planet.name}</h5>
-            <p className="card-text">
-              <strong>Climate:</strong> {planet.climate}<br/>
-              <strong>Terrain:</strong> {planet.terrain}<br/>
-              <strong>Population:</strong> {planet.population}
-            </p>
-            <button className="btn btn-info btn-sm">Explore Planet</button>
-          </div>
-        </div>
-      </div>
-  );
-
-  const StarshipCard = ({ starship }) => (
-      <div className="col-md-6 col-lg-4 mb-4">
-        <div className="card h-100 shadow-sm">
-          <div className="card-body">
-            <h5 className="card-title text-success">{starship.name}</h5>
-            <p className="card-text">
-              <strong>Model:</strong> {starship.model}<br/>
-              <strong>Manufacturer:</strong> {starship.manufacturer}<br/>
-              <strong>Crew:</strong> {starship.crew}
-            </p>
-            <button className="btn btn-success btn-sm">View Ship</button>
-          </div>
-        </div>
-      </div>
-  );
-
-  const FilmCard = ({ film }) => (
-      <div className="col-md-6 col-lg-4 mb-4">
-        <div className="card h-100 shadow-sm">
-          <div className="card-body">
-            <h5 className="card-title text-danger">Episode {film.episode_id}: {film.title}</h5>
-            <p className="card-text">
-              <strong>Director:</strong> {film.director}<br/>
-              <strong>Producer:</strong> {film.producer}<br/>
-              <strong>Release Date:</strong> {film.release_date}
-            </p>
-            <button className="btn btn-danger btn-sm">Watch Trailer</button>
-          </div>
-        </div>
-      </div>
-  );
-
   return (
       <div className="container-fluid bg-dark text-light min-vh-100">
-        {/* Header */}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-black">
-          <div className="container">
-            <a className="navbar-brand fw-bold fs-2" href="#">
-              <span className="text-warning">STAR</span> <span className="text-info">WARS</span> API
-            </a>
-            <div className="navbar-nav ms-auto">
-              <span className="navbar-text">May the Force be with you</span>
-            </div>
-          </div>
-        </nav>
+        <Header />
+        <SearchSection />
 
-        {/* Search Section */}
-        <div className="container mt-4">
-          <div className="row justify-content-center">
-            <div className="col-md-8">
-              <div className="input-group mb-4">
-                <input
-                    type="text"
-                    className="form-control form-control-lg"
-                    placeholder="Search the galaxy far, far away..."
-                />
-                <button className="btn btn-warning btn-lg" type="button">
-                  🔍 Search
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {/* Navigation Tabs */}
+        {/* Content */}
         <div className="container">
-          <ul className="nav nav-pills nav-fill mb-4">
-            <li className="nav-item">
-              <button
-                  className={`nav-link ${activeTab === 'characters' ? 'active bg-warning text-dark' : 'text-warning'}`}
-                  onClick={() => setActiveTab('characters')}
-              >
-                👥 Characters
-              </button>
-            </li>
-            <li className="nav-item">
-              <button
-                  className={`nav-link ${activeTab === 'planets' ? 'active bg-info text-dark' : 'text-info'}`}
-                  onClick={() => setActiveTab('planets')}
-              >
-                🪐 Planets
-              </button>
-            </li>
-            <li className="nav-item">
-              <button
-                  className={`nav-link ${activeTab === 'starships' ? 'active bg-success text-dark' : 'text-success'}`}
-                  onClick={() => setActiveTab('starships')}
-              >
-                🚀 Starships
-              </button>
-            </li>
-            <li className="nav-item">
-              <button
-                  className={`nav-link ${activeTab === 'films' ? 'active bg-danger text-dark' : 'text-danger'}`}
-                  onClick={() => setActiveTab('films')}
-              >
-                🎬 Films
-              </button>
-            </li>
-          </ul>
-
-          {/* Content */}
           <div className="row">
             {activeTab === 'characters' && mockCharacters.map(character => (
                 <CharacterCard key={character.id} character={character} />
@@ -185,56 +69,12 @@ const SWAPIApp = () => {
             ))}
           </div>
 
-          {/* Statistics Section */}
-          <div className="row mt-5 mb-4">
-            <div className="col-md-3">
-              <div className="card bg-warning text-dark text-center">
-                <div className="card-body">
-                  <h2 className="card-title">87</h2>
-                  <p className="card-text">Characters</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card bg-info text-dark text-center">
-                <div className="card-body">
-                  <h2 className="card-title">60</h2>
-                  <p className="card-text">Planets</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card bg-success text-white text-center">
-                <div className="card-body">
-                  <h2 className="card-title">37</h2>
-                  <p className="card-text">Starships</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card bg-danger text-white text-center">
-                <div className="card-body">
-                  <h2 className="card-title">6</h2>
-                  <p className="card-text">Films</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <StatisticsSection />
         </div>
 
-        {/* Footer */}
-        <footer className="bg-black text-center py-4 mt-5">
-          <div className="container">
-            <p className="mb-0">
-              Made with ❤️ using <span className="text-info">React</span> and <span className="text-primary">Bootstrap</span>
-            </p>
-            <p className="mb-0 mt-2">
-              <small className="text-muted">A long time ago in a galaxy far, far away...</small>
-            </p>
-          </div>
-        </footer>
+        <Footer />
       </div>
   );
 };
 
-export default SWAPIApp;
+export default App;
