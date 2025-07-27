@@ -373,3 +373,17 @@ Twenty-fifth topic covering React class components, state management with setSta
 - Practice with component lifecycle methods (componentDidMount, componentWillUnmount)
 - Implement state management using setState method
 </details>
+
+<details>
+<summary><b>26. Function Components, Hooks and Memoization in React</b></summary>
+
+Twenty-sixth topic covering React functional components, hooks (useState, useEffect, useCallback, useRef), and performance optimization through memoization.
+
+### emojiVotingHooks
+- Refactor previous emoji voting application to use functional components
+- Implement state management using useState hook
+- Use useEffect for side effects and lifecycle equivalent methods
+- Practice with useCallback for function memoization
+- Apply useRef for DOM element references
+- Optimize component performance with proper hook usage
+</details>
