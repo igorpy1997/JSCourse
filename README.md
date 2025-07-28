@@ -20,7 +20,7 @@ git clone --filter=blob:none --sparse https://github.com/igorpy1997/JSCourse.git
 cd JSCourse
 
 # Set up sparse-checkout for a specific folder
-git sparse-checkout set variablesAndType/typesList
+git sparse-checkout set "variablesAndType/typesList"
 
 # Update from remote repository
 git pull origin main
@@ -386,4 +386,20 @@ Twenty-sixth topic covering React functional components, hooks (useState, useEff
 - Practice with useCallback for function memoization
 - Apply useRef for DOM element references
 - Optimize component performance with proper hook usage
+</details>
+
+<details>
+<summary><b>27. Context, Routing and Error Handling</b></summary>
+
+Twenty-seventh topic covering React Context API, routing with React Router, and error handling with Error Boundaries for building robust Single Page Applications.
+
+### spaApplication
+- Create a Single Page Application (SPA) using Vite
+- Implement navigation header with links to: "Home", "Contacts", "About Me"
+- Add TODO list form on the home page
+- Implement dark/light theme toggle using React Context
+- Fill "Contacts" and "About Me" pages with custom content
+- Add Error Boundaries for proper error handling
+- Practice with React Router for client-side routing
+- Use useContext hook for global state management (theme switching)
 </details>

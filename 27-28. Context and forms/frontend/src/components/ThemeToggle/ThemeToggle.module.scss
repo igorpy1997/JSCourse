@@ -1,0 +1,75 @@
+// Light theme
+.light {
+  background: #f8f9fa;
+  color: #333333;
+  border: 1px solid #e9ecef;
+
+  &:hover {
+    background: #e9ecef;
+    border-color: #007bff;
+  }
+
+  &:active {
+    background: #dee2e6;
+  }
+}
+
+// Dark theme
+.dark {
+  background: #404040;
+  color: #ffffff;
+  border: 1px solid #555555;
+
+  &:hover {
+    background: #555555;
+    border-color: #66b3ff;
+  }
+
+  &:active {
+    background: #606060;
+  }
+}
+
+// Common styles
+.toggleButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+}
+
+.icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-family: inherit;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .toggleButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .icon {
+    font-size: 1rem;
+  }
+
+  .text {
+    display: none; // Hide text on mobile, show only icon
+  }
+}

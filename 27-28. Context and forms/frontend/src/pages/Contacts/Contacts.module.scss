@@ -1,0 +1,348 @@
+// Light theme
+.light {
+  background: #f8f9fa;
+  min-height: calc(100vh - 80px);
+
+  .title {
+    color: #333333;
+  }
+
+  .subtitle {
+    color: #6c757d;
+  }
+
+  .sectionTitle {
+    color: #333333;
+  }
+
+  .contactCard {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    color: #333333;
+
+    &:hover {
+      border-color: #007bff;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+
+  .contactTitle {
+    color: #333333;
+  }
+
+  .contactValue {
+    color: #6c757d;
+  }
+
+  .scheduleCard, .locationCard, .responseCard {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+  }
+
+  .scheduleDay {
+    color: #333333;
+  }
+
+  .scheduleTime {
+    color: #007bff;
+  }
+
+  .locationTitle {
+    color: #333333;
+  }
+
+  .locationDescription {
+    color: #6c757d;
+  }
+
+  .responseTitle {
+    color: #333333;
+  }
+
+  .responseText {
+    color: #495057;
+  }
+}
+
+// Dark theme
+.dark {
+  background: #1a1a1a;
+  min-height: calc(100vh - 80px);
+
+  .title {
+    color: #ffffff;
+  }
+
+  .subtitle {
+    color: #adb5bd;
+  }
+
+  .sectionTitle {
+    color: #ffffff;
+  }
+
+  .contactCard {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+    color: #ffffff;
+
+    &:hover {
+      border-color: #66b3ff;
+      box-shadow: 0 4px 12px rgba(102, 179, 255, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+
+  .contactTitle {
+    color: #ffffff;
+  }
+
+  .contactValue {
+    color: #adb5bd;
+  }
+
+  .scheduleCard, .locationCard, .responseCard {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+  }
+
+  .scheduleDay {
+    color: #ffffff;
+  }
+
+  .scheduleTime {
+    color: #66b3ff;
+  }
+
+  .locationTitle {
+    color: #ffffff;
+  }
+
+  .locationDescription {
+    color: #adb5bd;
+  }
+
+  .responseTitle {
+    color: #ffffff;
+  }
+
+  .responseText {
+    color: #cccccc;
+  }
+}
+
+// Common styles
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionIcon {
+  font-size: 1.75rem;
+}
+
+.contactsSection {
+  .contactGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .contactCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .contactIcon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .contactInfo {
+    flex: 1;
+  }
+
+  .contactTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .contactValue {
+    font-size: 0.9rem;
+    margin: 0;
+    word-break: break-all;
+  }
+}
+
+.scheduleSection {
+  .scheduleCard {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .scheduleItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .scheduleDay {
+    font-weight: 500;
+  }
+
+  .scheduleTime {
+    font-weight: 600;
+  }
+}
+
+.locationSection {
+  .locationCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .locationInfo {
+    flex: 1;
+  }
+
+  .locationTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .locationDescription {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .locationIcon {
+    font-size: 3rem;
+    margin-left: 1rem;
+  }
+}
+
+.responseSection {
+  .responseCard {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .responseTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+
+  .responseText {
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .content {
+    gap: 2rem;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contactCard {
+    padding: 1rem;
+  }
+
+  .contactIcon {
+    font-size: 2rem;
+  }
+
+  .locationCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .locationIcon {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  .scheduleItem {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+}

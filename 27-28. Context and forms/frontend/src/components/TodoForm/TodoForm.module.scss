@@ -1,0 +1,205 @@
+// Light theme
+.light {
+  .todoInput {
+    background: #ffffff;
+    color: #333333;
+    border: 2px solid #e9ecef;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+    }
+
+    &.errorInput {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.1);
+    }
+
+    &::placeholder {
+      color: #6c757d;
+    }
+
+    &:disabled {
+      background: #f8f9fa;
+      color: #6c757d;
+    }
+  }
+
+  .submitBtn {
+    background: #007bff;
+    color: #ffffff;
+
+    &:hover:not(:disabled) {
+      background: #0056b3;
+    }
+
+    &:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+  }
+
+  .errorMessage {
+    color: #dc3545;
+  }
+
+  .warningText {
+    color: #ffc107;
+  }
+
+  .normalText {
+    color: #6c757d;
+  }
+}
+
+// Dark theme
+.dark {
+  .todoInput {
+    background: #404040;
+    color: #ffffff;
+    border: 2px solid #555555;
+
+    &:focus {
+      border-color: #66b3ff;
+      box-shadow: 0 0 0 2px rgba(102, 179, 255, 0.1);
+    }
+
+    &.errorInput {
+      border-color: #e74c3c;
+      box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.1);
+    }
+
+    &::placeholder {
+      color: #adb5bd;
+    }
+
+    &:disabled {
+      background: #2d2d2d;
+      color: #6c757d;
+    }
+  }
+
+  .submitBtn {
+    background: #66b3ff;
+    color: #000000;
+
+    &:hover:not(:disabled) {
+      background: #4da6ff;
+    }
+
+    &:disabled {
+      background: #555555;
+      color: #adb5bd;
+      cursor: not-allowed;
+    }
+  }
+
+  .errorMessage {
+    color: #f5c6cb;
+  }
+
+  .warningText {
+    color: #ffeaa7;
+  }
+
+  .normalText {
+    color: #adb5bd;
+  }
+}
+
+// Common styles
+.todoForm {
+  margin-bottom: 2rem;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.todoInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.submitBtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  white-space: nowrap;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.errorMessage {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  &::before {
+    content: '⚠️';
+  }
+}
+
+.charCounter {
+  text-align: right;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.warningText {
+  font-weight: 600;
+}
+
+.normalText {
+  font-weight: 400;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .inputGroup {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+
+  .todoInput {
+    font-size: 16px; // Prevent zoom on iOS
+  }
+}

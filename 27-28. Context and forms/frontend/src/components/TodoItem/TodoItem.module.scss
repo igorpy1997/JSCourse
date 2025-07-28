@@ -1,0 +1,317 @@
+// Light theme
+.light {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+
+  &:hover {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+  }
+
+  &.completed {
+    background: #f8f9fa;
+    border-color: #28a745;
+
+    .todoText {
+      color: #6c757d;
+    }
+  }
+
+  .todoText {
+    color: #333333;
+  }
+
+  .todoDate {
+    color: #6c757d;
+  }
+
+  .customCheckbox {
+    background: #ffffff;
+    border: 2px solid #dee2e6;
+
+    &:hover {
+      border-color: #007bff;
+    }
+  }
+
+  .checkbox:checked + .checkboxLabel .customCheckbox {
+    background: #28a745;
+    border-color: #28a745;
+  }
+
+  .toggleBtn {
+    background: #f8f9fa;
+    color: #495057;
+
+    &:hover {
+      background: #e9ecef;
+    }
+  }
+
+  .deleteBtn {
+    background: #f8f9fa;
+    color: #dc3545;
+
+    &:hover {
+      background: #f5c6cb;
+    }
+  }
+
+  .updated {
+    color: #007bff;
+  }
+}
+
+// Dark theme
+.dark {
+  background: #3d3d3d;
+  border: 1px solid #555555;
+
+  &:hover {
+    border-color: #66b3ff;
+    box-shadow: 0 2px 8px rgba(102, 179, 255, 0.1);
+  }
+
+  &.completed {
+    background: #2d2d2d;
+    border-color: #28a745;
+
+    .todoText {
+      color: #adb5bd;
+    }
+  }
+
+  .todoText {
+    color: #ffffff;
+  }
+
+  .todoDate {
+    color: #adb5bd;
+  }
+
+  .customCheckbox {
+    background: #555555;
+    border: 2px solid #777777;
+
+    &:hover {
+      border-color: #66b3ff;
+    }
+  }
+
+  .checkbox:checked + .checkboxLabel .customCheckbox {
+    background: #28a745;
+    border-color: #28a745;
+  }
+
+  .toggleBtn {
+    background: #555555;
+    color: #ffffff;
+
+    &:hover {
+      background: #666666;
+    }
+  }
+
+  .deleteBtn {
+    background: #555555;
+    color: #e74c3c;
+
+    &:hover {
+      background: #721c24;
+    }
+  }
+
+  .updated {
+    color: #66b3ff;
+  }
+}
+
+// Common styles
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  animation: slideIn 0.3s ease-out;
+  animation-delay: var(--animation-delay, 0s);
+  animation-fill-mode: both;
+
+  &.completed {
+    .todoText {
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .customCheckbox {
+      transform: scale(1.1);
+    }
+  }
+
+  &.deleting {
+    opacity: 0.5;
+    transform: scale(0.95);
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0; // Allows text to truncate properly
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem; // Align with text
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.checkmark {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  animation: checkmarkPop 0.2s ease-out;
+}
+
+@keyframes checkmarkPop {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.textContainer {
+  flex: 1;
+  min-width: 0;
+}
+
+.todoText {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0 0 0.25rem 0;
+  word-wrap: break-word;
+  transition: all 0.2s ease;
+}
+
+.todoDate {
+  font-size: 0.75rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.updated {
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .todoItem {
+    padding: 0.75rem;
+  }
+
+  .content {
+    gap: 0.75rem;
+  }
+
+  .todoText {
+    font-size: 0.9rem;
+  }
+
+  .todoDate {
+    font-size: 0.7rem;
+  }
+
+  .actionBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .customCheckbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkmark {
+    font-size: 10px;
+  }
+}

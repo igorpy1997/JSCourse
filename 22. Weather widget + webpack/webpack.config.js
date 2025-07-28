@@ -70,7 +70,7 @@ module.exports = (env, argv) => {
 
         plugins: [
             new Dotenv({
-                path: './.env.example.example',
+                path: './.env.example',
                 safe: false,
                 systemvars: true,
                 silent: true,

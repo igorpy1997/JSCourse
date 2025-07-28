@@ -1,0 +1,509 @@
+// Light theme
+.light {
+  background: #f8f9fa;
+  min-height: calc(100vh - 80px);
+
+  .title {
+    color: #333333;
+  }
+
+  .subtitle {
+    color: #6c757d;
+  }
+
+  .card, .skillCard, .educationCard, .hobbyCard, .factCard {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .sectionTitle {
+    color: #333333;
+  }
+
+  .introText {
+    color: #495057;
+  }
+
+  .skillCategory {
+    color: #333333;
+  }
+
+  .techBadge {
+    background: #e9ecef;
+    color: #495057;
+  }
+
+  .timelineDot {
+    background: #007bff;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 3px #007bff;
+  }
+
+  .timelineTitle {
+    color: #333333;
+  }
+
+  .timelineCompany {
+    color: #007bff;
+  }
+
+  .timelineDescription {
+    color: #6c757d;
+  }
+
+  .achievement {
+    color: #495057;
+  }
+
+  .educationDegree {
+    color: #333333;
+  }
+
+  .educationInstitution {
+    color: #007bff;
+  }
+
+  .educationDetails {
+    color: #6c757d;
+  }
+
+  .hobbyName {
+    color: #333333;
+  }
+
+  .hobbyDescription {
+    color: #6c757d;
+  }
+
+  .factTitle {
+    color: #333333;
+  }
+
+  .factText {
+    color: #495057;
+  }
+}
+
+// Dark theme
+.dark {
+  background: #1a1a1a;
+  min-height: calc(100vh - 80px);
+
+  .title {
+    color: #ffffff;
+  }
+
+  .subtitle {
+    color: #adb5bd;
+  }
+
+  .card, .skillCard, .educationCard, .hobbyCard, .factCard {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .sectionTitle {
+    color: #ffffff;
+  }
+
+  .introText {
+    color: #cccccc;
+  }
+
+  .skillCategory {
+    color: #ffffff;
+  }
+
+  .techBadge {
+    background: #404040;
+    color: #cccccc;
+  }
+
+  .timelineDot {
+    background: #66b3ff;
+    border: 3px solid #2d2d2d;
+    box-shadow: 0 0 0 3px #66b3ff;
+  }
+
+  .timelineTitle {
+    color: #ffffff;
+  }
+
+  .timelineCompany {
+    color: #66b3ff;
+  }
+
+  .timelineDescription {
+    color: #adb5bd;
+  }
+
+  .achievement {
+    color: #cccccc;
+  }
+
+  .educationDegree {
+    color: #ffffff;
+  }
+
+  .educationInstitution {
+    color: #66b3ff;
+  }
+
+  .educationDetails {
+    color: #adb5bd;
+  }
+
+  .hobbyName {
+    color: #ffffff;
+  }
+
+  .hobbyDescription {
+    color: #adb5bd;
+  }
+
+  .factTitle {
+    color: #ffffff;
+  }
+
+  .factText {
+    color: #cccccc;
+  }
+}
+
+// Common styles
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.avatar {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionIcon {
+  font-size: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.introText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Skills section
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.skillCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+}
+
+.skillCategory {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+// Experience section
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #007bff, #66b3ff);
+  }
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.timelineContent {
+  background: inherit;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timelinePeriod {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.timelineTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.timelineCompany {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+}
+
+.timelineDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.achievementsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievement {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+
+  &::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Education section
+.educationCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.educationPeriod {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.educationDegree {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.educationInstitution {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+}
+
+.educationDetails {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+// Hobbies section
+.hobbiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.hobbyCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.hobbyIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hobbyName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.hobbyDescription {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+// Fact section
+.factCard {
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.factTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.factText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .avatar {
+    font-size: 3rem;
+  }
+
+  .content {
+    gap: 2rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hobbiesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+
+    &::before {
+      left: 0.5rem;
+    }
+  }
+
+  .timelineDot {
+    left: -1.5rem;
+  }
+
+  .card, .skillCard, .educationCard, .hobbyCard, .factCard {
+    padding: 1.25rem;
+  }
+}
