@@ -1,0 +1,41 @@
+$card-bg: #ffffff;
+$primary-color: #333333;
+$border-color: #e9ecef;
+$hover-bg: #f1f3f4;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+$emoji-size: 50px;
+$border-radius: 12px;
+
+.emojiItem {
+  background: $card-bg;
+  border: 2px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  transition: all 0.2s ease;
+  min-width: 90px;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $hover-shadow;
+    background: $hover-bg;
+    border-color: #007bff;
+  }
+
+  .emoji {
+    font-size: $emoji-size;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease;
+  }
+
+  .votes {
+    font-size: 18px;
+    font-weight: 700;
+    color: $primary-color;
+  }
+}

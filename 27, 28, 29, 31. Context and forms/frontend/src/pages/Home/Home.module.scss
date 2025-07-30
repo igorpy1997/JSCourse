@@ -228,3 +228,26 @@
     width: 100%;
   }
 }
+.footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.totalCount {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: inherit;
+  margin-bottom: 0.5rem;
+}
+
+.sagaIndicator {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.dark .footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,67 @@
+$card-bg: #ffffff;
+$primary-color: #333333;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+
+.showButton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 30px;
+
+  &:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+}
+
+.resultsContainer {
+  background: $card-bg;
+  padding: 30px;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.resultsTitle {
+  color: $primary-color;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.winnerContainer {
+  text-align: center;
+}
+
+.winnerLabel {
+  color: $primary-color;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.winnerEmoji {
+  font-size: 80px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+
+.winnerVotes {
+  font-size: 20px;
+  font-weight: 700;
+  color: $primary-color;
+  margin: 0;
+}
