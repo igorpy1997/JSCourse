@@ -1,10 +1,24 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    selectShowResults,
+    selectWinner,
+    toggleResults
+} from '../../store/slices/emojiSlice';
 import styles from './ResultsBlock.module.scss';
 
-const ResultsBlock = ({ showResults, onToggleResults, winner }) => {
+const ResultsBlock = () => {
+    const dispatch = useDispatch();
+    const showResults = useSelector(selectShowResults);
+    const winner = useSelector(selectWinner);
+
+    const handleToggleResults = () => {
+        dispatch(toggleResults());
+    };
+
     return (
         <>
-            <button className={styles.showButton} onClick={onToggleResults}>
+            <button className={styles.showButton} onClick={handleToggleResults}>
                 {showResults ? 'Hide Results' : 'Show Results'}
             </button>
 
