@@ -403,3 +403,84 @@ Twenty-seventh topic covering React Context API, routing with React Router, and 
 - Practice with React Router for client-side routing
 - Use useContext hook for global state management (theme switching)
 </details>
+
+<details>
+<summary><b>28. Working with Forms</b></summary>
+
+Twenty-eighth topic covering form handling in React, including controlled and uncontrolled components, form validation, and integration with popular form libraries like Formik and React Hook Form.
+
+The lesson emphasizes the importance of regular practice and applying acquired skills in React and JavaScript development. Students learn about creating forms, submitting data to servers, handling events, and validating inputs. The topic covers controlled vs uncontrolled components, and introduces popular form libraries such as React Final Form and Hook Form for creating dynamic forms with proper validation.
+
+### todoListFormik
+- Create a TODO list application using Formik library
+- Implement form validation with minimum input length requirement (at least 5 characters)
+- Practice with Formik's form handling patterns and validation schemas
+- Demonstrate proper form state management and error handling
+</details>
+
+<details>
+<summary><b>29. Redux</b></summary>
+
+Twenty-ninth topic covering Redux state management library and its integration with React applications. Students learn about the "single source of truth" concept, creating stores and reducers, and implementing clean functions for reliable Redux operation.
+
+The lesson covers Redux fundamentals including store creation, reducer functions, action standards, and practical examples of implementing a counter using Redux. Students practice integrating Redux into their projects and learn about code structure and state management approaches.
+
+### reduxCounter
+- Implement a counter application using Redux
+- Create store, actions, and reducers following Redux patterns
+- Practice with Redux state management and action dispatch
+- Integrate Redux with React components using connect or hooks
+</details>
+
+<details>
+<summary><b>30. Introduction to Middleware with Redux-Thunk</b></summary>
+
+Thirtieth topic covering Redux Toolkit for state management in large projects and implementing middleware for complex asynchronous operations such as server requests. Students learn to organize code by structurally separating request logic from components.
+
+The lesson demonstrates creating asynchronous actions with Redux Toolkit that can be directly integrated into React components. Also covers the importance of unique keys in lists for optimizing React rendering performance.
+
+### swapiReduxThunk
+- Create a SWAPI (Star Wars API) application using redux-thunk
+- Implement asynchronous data fetching with proper loading states
+- Add a footer button that clears TODO data
+- Practice with middleware patterns and async action creators
+- Follow the provided interface example for consistent UI design
+</details>
+
+<details>
+<summary><b>31. Iterators, Generators and Redux-Saga</b></summary>
+
+Thirty-first topic covering JavaScript iterators, generators, and Redux-Saga middleware for handling complex asynchronous flows. Students learn about symbols as unique primitives, iterators for traversing collections, and generators that can pause and resume execution.
+
+The lesson focuses on understanding generators as a foundation for working effectively with Redux-Saga library. Students learn to use Redux-Saga for handling asynchronous requests, subscribing to actions, launching workers, and processing server requests.
+
+### todoReduxSaga
+- Implement TODO list functionality using Redux-Saga
+- Create sagas for handling asynchronous operations:
+  - Adding and loading items
+  - Deletion
+  - Completion toggling
+  - Editing
+  - Clearing all items
+- Practice with generator functions and saga patterns
+- Implement proper error handling and loading states
+</details>
+
+<details>
+<summary><b>32. Component Styling</b></summary>
+
+Thirty-second topic covering component styling in React using various libraries and technologies such as CSS modules, Emotion, and SASS. Students learn proper project structure organization where each component has its own folder and styles, emphasizing the importance of modularity.
+
+The lesson focuses on dynamic styling and methodology for writing styles that help avoid class conflicts. Students explore popular styling libraries like Material-UI for quick and efficient UI element creation, and learn about dynamic style management using props for greater flexibility.
+
+### resumeWebsite
+- Create a personal resume website using Material-UI or Ant Design
+- Implement the following pages and features:
+  - Header with navigation menu
+  - Main page resembling a resume with skills description
+  - TODO list page
+  - SWAPI page
+  - Footer with contact information
+- Practice with component styling and UI library integration
+- Demonstrate responsive design and modern styling approaches
+</details>
