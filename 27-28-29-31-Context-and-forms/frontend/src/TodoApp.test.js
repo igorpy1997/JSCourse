@@ -136,18 +136,14 @@ describe('TODO Application Tests', () => {
 
         const input = screen.getByPlaceholderText(/додати нове завдання/i);
 
-        await user.click(input);
-        await user.type(input, 'a');
+        // Убеждаемся, что поле пустое
         await user.clear(input);
 
-        const form = screen.getByRole('form') || input.closest('form');
+        // Пытаемся отправить форму с пустым полем
+        const submitButton = screen.getByRole('button', { name: /додати/i });
+        await user.click(submitButton);
 
-        if (form) {
-            await user.click(form);
-            const submitEvent = new Event('submit', { bubbles: true, cancelable: true });
-            form.dispatchEvent(submitEvent);
-        }
-
+        // Проверяем, что появилась ошибка
         await waitFor(() => {
             expect(screen.getByText(/поле обов'язкове для заповнення/i)).toBeInTheDocument();
         }, { timeout: 2000 });
