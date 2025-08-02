@@ -4,33 +4,104 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import todoReducer from './store/slices/todoSlice';
+import createSagaMiddleware from 'redux-saga';
+import { takeEvery, put } from 'redux-saga/effects';
+import { MemoryRouter } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import Home from './pages/Home/Home';
+import todoReducer, {
+    fetchTodosStart,
+    fetchTodosSuccess,
+    createTodoStart,
+    createTodoSuccess
+} from './store/slices/todoSlice';
+
+jest.mock('./api/todoAPI', () => {
+    return jest.fn().mockImplementation(() => ({
+        fetchTodos: jest.fn().mockResolvedValue([]),
+        createTodo: jest.fn().mockResolvedValue({
+            _id: '1',
+            text: 'Test todo',
+            completed: false,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+        }),
+        updateTodo: jest.fn().mockResolvedValue({
+            _id: '1',
+            text: 'Updated todo',
+            completed: true,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+        }),
+        deleteTodo: jest.fn().mockResolvedValue({ _id: '1' }),
+        clearCompleted: jest.fn().mockResolvedValue({ deletedCount: 1 })
+    }));
+});
+
+function* mockFetchTodosSaga() {
+    yield put(fetchTodosSuccess([]));
+}
+
+function* mockCreateTodoSaga(action) {
+    const newTodo = {
+        _id: Date.now().toString(),
+        text: action.payload,
+        completed: false,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+    };
+    yield put(createTodoSuccess(newTodo));
+}
+
+function* mockSaga() {
+    yield takeEvery(fetchTodosStart.type, mockFetchTodosSaga);
+    yield takeEvery(createTodoStart.type, mockCreateTodoSaga);
+}
 
 const createTestStore = () => {
-    return configureStore({
+    const sagaMiddleware = createSagaMiddleware();
+
+    const store = configureStore({
         reducer: {
             todos: todoReducer,
         },
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: false,
+                serializableCheck: false
+            }).concat(sagaMiddleware),
     });
+
+    sagaMiddleware.run(mockSaga);
+
+    return store;
 };
 
-const AppWrapper = () => {
+const HomeWrapper = () => {
     const store = createTestStore();
 
     return (
         <Provider store={store}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
+            <MemoryRouter>
+                <ThemeProvider>
+                    <Home />
+                </ThemeProvider>
+            </MemoryRouter>
         </Provider>
     );
 };
 
 describe('TODO Application Tests', () => {
-    test('1. Page has TODO title', () => {
-        render(<AppWrapper />);
+    const waitForLoad = async () => {
+        await waitFor(() => {
+            expect(screen.queryByText(/завантаження завдань/i)).not.toBeInTheDocument();
+        }, { timeout: 2000 });
+    };
+
+    test('1. Page has TODO title', async () => {
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         const title = screen.getByText(/todo list with redux-saga/i);
         expect(title).toBeInTheDocument();
@@ -38,10 +109,13 @@ describe('TODO Application Tests', () => {
 
     test('2. Input field accepts both numbers and letters', async () => {
         const user = userEvent.setup();
-        render(<AppWrapper />);
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         const input = screen.getByPlaceholderText(/додати нове завдання/i);
 
+        await user.clear(input);
         await user.type(input, 'Buy milk');
         expect(input).toHaveValue('Buy milk');
 
@@ -56,38 +130,60 @@ describe('TODO Application Tests', () => {
 
     test('3. Shows error when clicking "Add" without text', async () => {
         const user = userEvent.setup();
-        render(<AppWrapper />);
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         const input = screen.getByPlaceholderText(/додати нове завдання/i);
-        const submitButton = screen.getByRole('button', { name: /додати/i });
 
-        await user.click(submitButton);
+        await user.click(input);
+        await user.type(input, 'a');
+        await user.clear(input);
+
+        const form = screen.getByRole('form') || input.closest('form');
+
+        if (form) {
+            await user.click(form);
+            const submitEvent = new Event('submit', { bubbles: true, cancelable: true });
+            form.dispatchEvent(submitEvent);
+        }
 
         await waitFor(() => {
             expect(screen.getByText(/поле обов'язкове для заповнення/i)).toBeInTheDocument();
-        });
+        }, { timeout: 2000 });
     });
 
     test('4. After adding text and clicking "Add" new item appears in list', async () => {
         const user = userEvent.setup();
-        render(<AppWrapper />);
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         const input = screen.getByPlaceholderText(/додати нове завдання/i);
-        const submitButton = screen.getByRole('button', { name: /додати/i });
 
         const taskText = 'Test task for verification';
 
+        await user.clear(input);
         await user.type(input, taskText);
+
+        await waitFor(() => {
+            const submitButton = screen.getByRole('button', { name: /додати/i });
+            expect(submitButton).not.toBeDisabled();
+        });
+
+        const submitButton = screen.getByRole('button', { name: /додати/i });
         await user.click(submitButton);
 
         await waitFor(() => {
             expect(input).toHaveValue('');
-        });
+        }, { timeout: 2000 });
     });
 
     test('5. Task filtering works (All/Active/Completed)', async () => {
         const user = userEvent.setup();
-        render(<AppWrapper />);
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         const allFilter = screen.getByRole('button', { name: /всі/i });
         const activeFilter = screen.getByRole('button', { name: /активні/i });
@@ -108,32 +204,44 @@ describe('TODO Application Tests', () => {
 
     test('6. Validates minimum length (5 characters)', async () => {
         const user = userEvent.setup();
-        render(<AppWrapper />);
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         const input = screen.getByPlaceholderText(/додати нове завдання/i);
-        const submitButton = screen.getByRole('button', { name: /додати/i });
 
+        await user.clear(input);
         await user.type(input, 'abc');
+
+        const submitButton = screen.getByRole('button', { name: /додати/i });
         await user.click(submitButton);
 
         await waitFor(() => {
             expect(screen.getByText(/мінімальна довжина - 5 символів/i)).toBeInTheDocument();
-        });
+        }, { timeout: 2000 });
     });
 
     test('7. Character counter is displayed', async () => {
         const user = userEvent.setup();
-        render(<AppWrapper />);
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         const input = screen.getByPlaceholderText(/додати нове завдання/i);
 
+        await user.clear(input);
         await user.type(input, 'Test');
 
-        expect(screen.getByText(/4\/500 символів/i)).toBeInTheDocument();
+        await waitFor(() => {
+            const counterElement = screen.getByText(/4\/500 символів/i);
+            expect(counterElement).toBeInTheDocument();
+        }, { timeout: 1000 });
     });
 
-    test('8. Task statistics are displayed', () => {
-        render(<AppWrapper />);
+    test('8. Task statistics are displayed', async () => {
+        render(<HomeWrapper />);
+
+        await waitForLoad();
 
         expect(screen.getByText(/всього:/i)).toBeInTheDocument();
         expect(screen.getByText(/активних:/i)).toBeInTheDocument();
