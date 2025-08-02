@@ -484,3 +484,24 @@ The lesson focuses on dynamic styling and methodology for writing styles that he
 - Practice with component styling and UI library integration
 - Demonstrate responsive design and modern styling approaches
 </details>
+
+<details>
+<summary><b>33. Testing</b></summary>
+
+Thirty-third topic covering the importance of software testing, focusing on unit testing and integration testing in React development context. Students learn that testing is crucial for developers as it helps identify bugs in early stages and ensures application stability.
+
+The lesson emphasizes understanding the difference between developer-perspective testing (unit testing) and user-perspective testing (integration testing), enabling the creation of quality code. Students explore various testing libraries such as Jest and Testing Library, and learn how to create and run tests. They gain practical skills in writing tests for their components and learn to work with mocks, allowing them to test individual code parts without dependencies on other components.
+
+### todoAppTesting
+- Add a minimum of 5 tests to your TODO application
+- Test examples to implement:
+  - Verify that the page has a TODO title
+  - Test that the text input field accepts both numbers and letters
+  - Verify that clicking "Add" button without text displays an error
+  - Test that after entering text and clicking "Add", a new list item appears with the correct text
+  - Create additional creative tests for thorough coverage
+- Practice with Jest and Testing Library
+- Implement unit tests and integration tests
+- Learn to work with mocks and test component behavior
+- Demonstrate testing best practices and patterns
+</details>
